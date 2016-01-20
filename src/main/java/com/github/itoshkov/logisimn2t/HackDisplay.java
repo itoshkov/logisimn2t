@@ -93,17 +93,16 @@ public class HackDisplay extends ManagedComponent {
         state.addr = addr;
         state.data = data;
         if (state.tick(val(circuitState, Pin.CLK)) && val(circuitState, Pin.WE) == Value.TRUE) {
-            final int x = addr % 16;
-            final int y = addr / 16;
+            final int x = addr % 32;
+            final int y = addr / 32;
             for (int i = 0; i < 16; i++) {
                 final int color = ((data >> i) & 1) - 1;
-                state.img.setRGB(x + 15 - i, y, color);
+                state.img.setRGB(16 * x + 15 - i, y, color);
             }
         }
 
-        if (val(circuitState, Pin.RST) == Value.TRUE) {
+        if (val(circuitState, Pin.RST) == Value.TRUE)
             state.reset();
-        }
     }
 
     private int addr(CircuitState circuitState, Pin pin) {
