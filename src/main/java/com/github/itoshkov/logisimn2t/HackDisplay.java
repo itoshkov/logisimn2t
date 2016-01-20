@@ -96,15 +96,13 @@ public class HackDisplay extends ManagedComponent {
             final int x = addr % 16;
             final int y = addr / 16;
             for (int i = 0; i < 16; i++) {
-                final int color = -((data >> i) & 1);
-                state.img.setRGB(x + i, y, color);
+                final int color = ((data >> i) & 1) - 1;
+                state.img.setRGB(x + 15 - i, y, color);
             }
         }
 
         if (val(circuitState, Pin.RST) == Value.TRUE) {
-            final Graphics g = state.img.getGraphics();
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, 512, 256);
+            state.reset();
         }
     }
 
@@ -124,6 +122,13 @@ public class HackDisplay extends ManagedComponent {
 
         State(BufferedImage img) {
             this.img = img;
+            reset();
+        }
+
+        public void reset() {
+            final Graphics g = img.getGraphics();
+            g.setColor(Color.WHITE);
+            g.fillRect(0, 0, 512, 256);
         }
 
         public State clone() {
