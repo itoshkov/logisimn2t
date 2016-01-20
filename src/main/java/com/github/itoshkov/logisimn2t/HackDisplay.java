@@ -158,7 +158,7 @@ public class HackDisplay extends ManagedComponent {
 
         @Override
         public Bounds getOffsetBounds(AttributeSet attrs) {
-            return Bounds.create(-270, -140, 270, 270);
+            return Bounds.create(-270, -140, 526, 270);
         }
 
         public void paintIcon(ComponentDrawContext context, int x, int y, AttributeSet attrs) {
