@@ -70,7 +70,6 @@ public class HackDisplay extends ManagedComponent {
     }
 
     private void draw(ComponentDrawContext context, int x, int y, State state) {
-        // TODO Check these
         final Graphics g = context.getGraphics();
         x -= 270;
         y -= 140;
@@ -79,6 +78,7 @@ public class HackDisplay extends ManagedComponent {
         for (Pin p : ORDINARY_PINS)
             context.drawPin(this, p.ordinal());
 
+        g.setColor(Color.lightGray);
         g.drawRect(x + 6, y + 6, 513, 257);
         context.drawClock(this, 0, Direction.NORTH);
         g.drawImage(state.img, x + 7, y + 7, null);
