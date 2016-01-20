@@ -1,6 +1,6 @@
 # README
 
-This implements components for [Logisim](http://www.cburch.com/logisim/index.html), suitable for implementing a HACK-like computer as described in the [From NAND to Tetris](http://nand2tetris.org/) course.
+[Logisim](http://www.cburch.com/logisim/index.html) components for implementing a HACK-like computer as described in the [From NAND to Tetris](http://nand2tetris.org/) course.
 
 ## Dependencies
 The only external dependency is `logisim.jar`. Since it's not available in the maven repos we need to add it manually before the first build:
