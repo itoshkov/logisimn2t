@@ -40,6 +40,8 @@ If the `WE` is 1 when the `CLK` goes up, all the 16 pixels in the specified segm
 
 Please note, that the display does *not* support reading the data!
 
+Here is how it looks: ![HACK display](https://github.com/itoshkov/logisimn2t/blob/master/HACK-display.png "HACK display")
+
 ## Author
 
 Ivan Toshkov
