@@ -97,7 +97,7 @@ public class HackDisplay extends ManagedComponent {
             final int y = addr / 32;
             for (int i = 0; i < 16; i++) {
                 final int color = ((data >> i) & 1) - 1;
-                state.img.setRGB(16 * x + 15 - i, y, color);
+                state.img.setRGB(16 * x + i, y, color);
             }
         }
 
