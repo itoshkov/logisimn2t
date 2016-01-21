@@ -28,17 +28,16 @@ The display follows the specification from nand2tetris. It is a 512 by 256 bitma
 
 Here are the pins from left to right:
 
-* `RST` - Resets the display. Redraws it all in white. Works regardless of the state of `CLK` and `WE`.
+* `RST` - Resets the display. Redraws it all in white. Works regardless of the state of `CLK` and `LOAD`.
 * `CLK` - The clock. The display is updated only when the clock changes state from 0 to 1.
-* `WE` - Idicates whether to update display (1) or not (0).
+* `LOAD` - Idicates whether to update display (1) or not (0).
 * `ADDR` - 13-bit address of the 16-bit segment to be updated. Address 0 is the top-left segment, 1 is next to it and so on.
-* `DATA` - 16-bit data. The bits are copied over the specified segment. Bit 1 means forground color (black), while 0 means background (white).
+* `IN` - 16-bit data in. The bits are copied over the specified segment. Bit 1 means foreground color (black), while 0 means background (white).
+* `OUT` - 16-bit data out. The data that is currently stored (and displayed) in the specified segment.
 
-If the `WE` is 1 when the `CLK` goes up, all the 16 pixels in the specified segment are updated at once.
+If the `LOAD` is 1 when the `CLK` goes up, all the 16 pixels in the specified segment are updated at once.
 
 `RST` works with priority. If it's 1, the display is cleared (all white) regardless of the state of the other pins.
-
-Please note, that the display does *not* support reading the data!
 
 Here is how it looks: ![HACK display](https://github.com/itoshkov/logisimn2t/blob/master/HACK-display.png "HACK display")
 

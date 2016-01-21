@@ -5,7 +5,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2"/>
   <lib desc="#Arithmetic" name="3"/>
-  <lib desc="#Memory" name="4"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6">
     <tool name="Text Tool">
@@ -54,45 +60,47 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(170,630)" to="(360,630)"/>
-    <wire from="(170,500)" to="(250,500)"/>
-    <wire from="(290,470)" to="(290,540)"/>
-    <wire from="(360,470)" to="(360,630)"/>
-    <wire from="(270,470)" to="(270,520)"/>
-    <wire from="(250,470)" to="(250,500)"/>
-    <wire from="(170,540)" to="(290,540)"/>
-    <wire from="(170,670)" to="(370,670)"/>
-    <wire from="(350,470)" to="(350,590)"/>
-    <wire from="(370,470)" to="(370,670)"/>
-    <wire from="(170,520)" to="(270,520)"/>
-    <wire from="(170,590)" to="(350,590)"/>
-    <comp lib="0" loc="(170,670)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="16"/>
-      <a name="label" val="DATA_OUT"/>
-    </comp>
-    <comp lib="7" loc="(490,340)" name="HACK Video Display"/>
-    <comp lib="0" loc="(170,500)" name="Pin">
+    <wire from="(250,290)" to="(250,450)"/>
+    <wire from="(180,290)" to="(180,360)"/>
+    <wire from="(260,290)" to="(260,450)"/>
+    <wire from="(260,450)" to="(280,450)"/>
+    <wire from="(60,360)" to="(180,360)"/>
+    <wire from="(120,410)" to="(240,410)"/>
+    <wire from="(160,290)" to="(160,340)"/>
+    <wire from="(60,320)" to="(140,320)"/>
+    <wire from="(240,290)" to="(240,410)"/>
+    <wire from="(140,290)" to="(140,320)"/>
+    <wire from="(120,450)" to="(250,450)"/>
+    <wire from="(60,340)" to="(160,340)"/>
+    <comp lib="0" loc="(60,360)" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="RST"/>
+      <a name="label" val="LOAD"/>
     </comp>
-    <comp lib="0" loc="(170,520)" name="Pin">
+    <comp lib="0" loc="(60,340)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="CLK"/>
     </comp>
-    <comp lib="0" loc="(170,540)" name="Pin">
+    <comp lib="0" loc="(120,450)" name="Pin">
+      <a name="width" val="16"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="WE"/>
+      <a name="label" val="IN"/>
     </comp>
-    <comp lib="0" loc="(170,590)" name="Pin">
+    <comp lib="7" loc="(380,160)" name="HACK Video Display"/>
+    <comp lib="0" loc="(60,320)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="RST"/>
+    </comp>
+    <comp lib="0" loc="(120,410)" name="Pin">
       <a name="width" val="13"/>
       <a name="tristate" val="false"/>
       <a name="label" val="ADDR"/>
     </comp>
-    <comp lib="0" loc="(170,630)" name="Pin">
+    <comp lib="0" loc="(280,450)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
       <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="DATA_IN"/>
+      <a name="label" val="OUT"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>

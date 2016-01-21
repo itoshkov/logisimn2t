@@ -7,11 +7,13 @@ import com.cburch.logisim.data.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
 import static com.cburch.logisim.data.BitWidth.ONE;
+import static com.github.itoshkov.logisimn2t.BitUtils.invertAndMirror;
 
 public class HackDisplay extends ManagedComponent {
     static final HackDisplayFactory FACTORY = new HackDisplayFactory();
@@ -95,33 +97,27 @@ public class HackDisplay extends ManagedComponent {
 
         final int addr = val(circuitState, Pin.ADDR).toIntValue();
         final int data = val(circuitState, Pin.DATA_IN).toIntValue();
-        final int x = addr % 32;
-        final int y = addr / 32;
-        if (state.tick(val(circuitState, Pin.CLK)) && val(circuitState, Pin.WE) == Value.TRUE)
-            for (int i = 0; i < 16; i++) {
-                final int color = ((data >> i) & 1) - 1;
-                state.img.setRGB(16 * x + i, y, color);
-            }
+        final byte[] pixels = ((DataBufferByte) state.img.getRaster().getDataBuffer()).getData();
+        final int idx = addr * 2;
+        if (state.tick(val(circuitState, Pin.CLK)) && val(circuitState, Pin.WE) == Value.TRUE) {
+            final int inv = ~Integer.reverse(data);
+            pixels[idx] = (byte) (inv >>> 24);
+            pixels[idx + 1] = (byte) (inv >>> 16);
+        }
 
         if (val(circuitState, Pin.RST) == Value.TRUE)
             state.reset();
 
-        final Value value = getPixels(state.img, x, y);
+        final Value value = getPixels(pixels, idx);
         circuitState.setValue(getEndLocation(Pin.DATA_OUT), value, this, 0);
     }
 
-    private Value getPixels(BufferedImage img, int x, int y) {
-        if (x < 0 || 16 * x + 15 >= img.getTileWidth() || y < 0 || y >= img.getHeight())
+    private Value getPixels(byte[] pixels, int idx) {
+        if (idx < 0 || idx >= pixels.length)
             return Value.createError(BIT_WIDTH_16);
 
-        int out = 0;
-        for (int i = 0; i < 16; i++) {
-            final int rgb = img.getRGB(16 * x + 15 - i, y);
-            final int bit = ~rgb & 1;
-            out = (out << 1) | bit;
-        }
-
-        return Value.createKnown(BIT_WIDTH_16, out);
+        final int inv = invertAndMirror(pixels[idx], pixels[idx + 1]);
+        return Value.createKnown(BIT_WIDTH_16, inv);
     }
 
     private Value val(CircuitState s, Pin pin) {
