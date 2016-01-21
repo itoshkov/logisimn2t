@@ -15,22 +15,27 @@ import static com.cburch.logisim.data.BitWidth.ONE;
 
 public class HackDisplay extends ManagedComponent {
     static final HackDisplayFactory FACTORY = new HackDisplayFactory();
+    private static final BitWidth BIT_WIDTH_13 = BitWidth.create(13);
+    private static final BitWidth BIT_WIDTH_16 = BitWidth.create(16);
 
     private enum Pin {
-        CLK(-220, 130, ONE),
-        WE(-200, 130, ONE),
-        ADDR(-140, 130, BitWidth.create(13)),
-        DATA(-130, 130, BitWidth.create(16)),
-        RST(-240, 130, ONE);
+        CLK(-220, 130, ONE, EndData.INPUT_ONLY),
+        WE(-200, 130, ONE, EndData.INPUT_ONLY),
+        ADDR(-140, 130, BIT_WIDTH_13, EndData.INPUT_ONLY),
+        DATA_IN(-130, 130, BIT_WIDTH_16, EndData.INPUT_ONLY),
+        DATA_OUT(-120, 130, BIT_WIDTH_16, EndData.OUTPUT_ONLY),
+        RST(-240, 130, ONE, EndData.INPUT_ONLY);
 
         final int transX;
         final int transY;
         final BitWidth width;
+        final int type;
 
-        Pin(int transX, int transY, BitWidth width) {
+        Pin(int transX, int transY, BitWidth width, int type) {
             this.transX = transX;
             this.transY = transY;
             this.width = width;
+            this.type = type;
         }
     }
 
@@ -45,7 +50,7 @@ public class HackDisplay extends ManagedComponent {
     public HackDisplay(Location loc, AttributeSet attrs) {
         super(loc, attrs, Pin.values().length);
         for (Pin p : Pin.values())
-            setEnd(p.ordinal(), getLocation().translate(p.transX, p.transY), p.width, EndData.INPUT_ONLY);
+            setEnd(p.ordinal(), getLocation().translate(p.transX, p.transY), p.width, p.type);
     }
 
     @Override
@@ -88,36 +93,48 @@ public class HackDisplay extends ManagedComponent {
     public void propagate(CircuitState circuitState) {
         final State state = getState(circuitState);
 
-        final int addr = addr(circuitState, Pin.ADDR);
-        final int data = addr(circuitState, Pin.DATA);
-        state.addr = addr;
-        state.data = data;
-        if (state.tick(val(circuitState, Pin.CLK)) && val(circuitState, Pin.WE) == Value.TRUE) {
-            final int x = addr % 32;
-            final int y = addr / 32;
+        final int addr = val(circuitState, Pin.ADDR).toIntValue();
+        final int data = val(circuitState, Pin.DATA_IN).toIntValue();
+        final int x = addr % 32;
+        final int y = addr / 32;
+        if (state.tick(val(circuitState, Pin.CLK)) && val(circuitState, Pin.WE) == Value.TRUE)
             for (int i = 0; i < 16; i++) {
                 final int color = ((data >> i) & 1) - 1;
                 state.img.setRGB(16 * x + i, y, color);
             }
-        }
 
         if (val(circuitState, Pin.RST) == Value.TRUE)
             state.reset();
+
+        final Value value = getPixels(state.img, x, y);
+        circuitState.setValue(getEndLocation(Pin.DATA_OUT), value, this, 0);
     }
 
-    private int addr(CircuitState circuitState, Pin pin) {
-        return val(circuitState, pin).toIntValue();
+    private Value getPixels(BufferedImage img, int x, int y) {
+        if (x < 0 || 16 * x + 15 >= img.getTileWidth() || y < 0 || y >= img.getHeight())
+            return Value.createError(BIT_WIDTH_16);
+
+        int out = 0;
+        for (int i = 0; i < 16; i++) {
+            final int rgb = img.getRGB(16 * x + 15 - i, y);
+            final int bit = ~rgb & 1;
+            out = (out << 1) | bit;
+        }
+
+        return Value.createKnown(BIT_WIDTH_16, out);
     }
 
     private Value val(CircuitState s, Pin pin) {
-        return s.getValue(getEndLocation(pin.ordinal()));
+        return s.getValue(getEndLocation(pin));
+    }
+
+    private Location getEndLocation(Pin pin) {
+        return getEndLocation(pin.ordinal());
     }
 
     private static class State implements ComponentState, Cloneable {
         public Value lastClock = null;
         public BufferedImage img;
-        public int addr;
-        public int data;
 
         State(BufferedImage img) {
             this.img = img;

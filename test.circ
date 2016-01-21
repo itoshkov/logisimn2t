@@ -61,18 +61,20 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(270,470)" to="(270,520)"/>
     <wire from="(250,470)" to="(250,500)"/>
     <wire from="(170,540)" to="(290,540)"/>
+    <wire from="(170,670)" to="(370,670)"/>
     <wire from="(350,470)" to="(350,590)"/>
+    <wire from="(370,470)" to="(370,670)"/>
     <wire from="(170,520)" to="(270,520)"/>
     <wire from="(170,590)" to="(350,590)"/>
+    <comp lib="0" loc="(170,670)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="label" val="DATA_OUT"/>
+    </comp>
+    <comp lib="7" loc="(490,340)" name="HACK Video Display"/>
     <comp lib="0" loc="(170,500)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="RST"/>
-    </comp>
-    <comp lib="7" loc="(490,340)" name="HACK Video Display"/>
-    <comp lib="0" loc="(170,590)" name="Pin">
-      <a name="width" val="13"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="ADDR"/>
     </comp>
     <comp lib="0" loc="(170,520)" name="Pin">
       <a name="tristate" val="false"/>
@@ -82,10 +84,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="WE"/>
     </comp>
+    <comp lib="0" loc="(170,590)" name="Pin">
+      <a name="width" val="13"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ADDR"/>
+    </comp>
     <comp lib="0" loc="(170,630)" name="Pin">
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="DATA"/>
+      <a name="label" val="DATA_IN"/>
     </comp>
   </circuit>
 </project>
