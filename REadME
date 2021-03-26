@@ -1,0 +1,99 @@
+Dear itoshkov, I am trying to create a vga controller for my project at school and i am trying over 2 weeks to download your screen. 
+I need to modify it a little bit and add some collrs and add some rows and colomns to transform it in 640 X480.
+Everytime when i am trying to add you project and modify it in eclipse i get a lots of errors and i cant solver them i have searche everywhere on the internet and i am stuck.
+If you have time could you please help me solve them?
+I need this very much for my project at school and my theachers does not know how to solve this. 
+
+Thank you for your time and i hope you can see this in time!
+Here is my gmail: zahrie.andrei36@yahoo.com
+if you know how could i solve it please let me know!
+Thank you again!
+
+
+
+The erorrs i get:
+
+Description	Resource	Path	Location	Type
+AbstractComponentFactory cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 161	Java Problem
+AddTool cannot be resolved to a type	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 12	Java Problem
+AttributeSet cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 52	Java Problem
+AttributeSet cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 172	Java Problem
+AttributeSet cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 177	Java Problem
+AttributeSet cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 181	Java Problem
+BitWidth cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 20	Java Problem
+BitWidth cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 21	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 20	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 21	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 26	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 27	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 28	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 33	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 36	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 39	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 55	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 117	Java Problem
+BitWidth cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 120	Java Problem
+Bounds cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 178	Java Problem
+Bounds cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 177	Java Problem
+CircuitState cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 69	Java Problem
+CircuitState cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 95	Java Problem
+CircuitState cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 123	Java Problem
+ComponentDrawContext cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 63	Java Problem
+ComponentDrawContext cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 79	Java Problem
+ComponentDrawContext cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 181	Java Problem
+ComponentFactory cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 59	Java Problem
+ComponentState cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 131	Java Problem
+Direction cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 90	Java Problem
+EndData cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 24	Java Problem
+EndData cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 25	Java Problem
+EndData cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 26	Java Problem
+EndData cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 27	Java Problem
+EndData cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 28	Java Problem
+EndData cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 29	Java Problem
+Library cannot be resolved to a type	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 11	Java Problem
+Location cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 52	Java Problem
+Location cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 64	Java Problem
+Location cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 127	Java Problem
+Location cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 172	Java Problem
+ManagedComponent cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 18	Java Problem
+ONE cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 24	Java Problem
+ONE cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 25	Java Problem
+ONE cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 29	Java Problem
+The import com.cburch cannot be resolved	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 3	Java Problem
+The import com.cburch cannot be resolved	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 4	Java Problem
+The import com.cburch cannot be resolved	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 5	Java Problem
+The import com.cburch cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 3	Java Problem
+The import com.cburch cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 4	Java Problem
+The import com.cburch cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 5	Java Problem
+The import com.cburch cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 6	Java Problem
+The import com.cburch cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 15	Java Problem
+The method getDisplayName() of type Components must override a superclass method	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 20	Java Problem
+The method getEndLocation(HackDisplay.Pin) from the type HackDisplay refers to the missing type Location	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 112	Java Problem
+The method getEndLocation(HackDisplay.Pin) from the type HackDisplay refers to the missing type Location	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 124	Java Problem
+The method getEndLocation(HackDisplay.Pin) from the type HackDisplay refers to the missing type Location	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 128	Java Problem
+The method getFactory() of type HackDisplay must override a superclass method	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 59	Java Problem
+The method getLocation() is undefined for the type HackDisplay	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 55	Java Problem
+The method getLocation() is undefined for the type HackDisplay	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 64	Java Problem
+The method getName() of type HackDisplay.HackDisplayFactory must override a superclass method	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 163	Java Problem
+The method getPixels(byte[], int) from the type HackDisplay refers to the missing type Value	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 111	Java Problem
+The method getTools() of type Components must override a superclass method	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 15	Java Problem
+Tool cannot be resolved to a type	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 12	Java Problem
+Tool cannot be resolved to a type	Components.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 15	Java Problem
+Type mismatch: cannot convert from HackDisplay to Component	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 173	Java Problem
+Value cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 117	Java Problem
+Value cannot be resolved	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 120	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 111	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 115	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 123	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 132	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 154	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 155	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 155	Java Problem
+Value cannot be resolved to a type	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 156	Java Problem
+Value cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 102	Java Problem
+Value cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 108	Java Problem
+Value cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 155	Java Problem
+Value cannot be resolved to a variable	HackDisplay.java	/logisimn2t/src/main/java/com/github/itoshkov/logisimn2t	line 155	Java Problem
+Build path specifies execution environment J2SE-1.5. There are no JREs installed in the workspace that are strictly compatible with this environment. 	logisimn2t		Build path	JRE System Library Problem
+The compiler compliance specified is 1.5 but a JRE 13 is used	logisimn2t		Compiler Compliance	JRE Compiler Compliance Problem
+ 
